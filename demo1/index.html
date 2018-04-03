@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用css3动画实现三个红绿灯交替闪烁效果</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="./demo1.css">
+</head>
+<body>
+<!--广告区域 -->
+<div id="advertiseArea">
+	<a class="title" href="http://www.maplejoyous.cn">使用css3动画实现三个红绿灯交替闪烁效果</a>
+	<a class="link" href="http://www.maplejoyous.cn">http://www.maplejoyous.cn</a>
+</div>
+
+<!--------------------------华丽的分割线-------------------------------->
+
+<div id="container">
+	<div class="traffic-light-block">
+		<div class="traffic-light">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<button class="btn btn-default" onclick="turnOnLight();">开启红绿灯</button>
+	<button class="btn btn-default" onclick="showGreenLight();">亮绿灯</button>
+	<button class="btn btn-default" onclick="showYellowLight();">亮黄灯</button>
+	<button class="btn btn-default" onclick="showRedLight();">亮红灯</button>
+</div>
+</body>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+    function turnOnLight() {
+        $('.traffic-light span').addClass('light-animate');
+        $('.traffic-light span').eq(0).addClass('green-light');
+        $('.traffic-light span').eq(1).addClass('yellow-light');
+        $('.traffic-light span').eq(2).addClass('red-light');
+    }
+
+    function showGreenLight() {
+        $('.traffic-light span').removeClass();
+        $('.traffic-light span').eq(0).addClass('green');
+    }
+
+    function showYellowLight() {
+        $('.traffic-light span').removeClass();
+        $('.traffic-light span').eq(1).addClass('yellow');
+    }
+
+    function showRedLight() {
+        $('.traffic-light span').removeClass();
+        $('.traffic-light span').eq(2).addClass('red');
+    }
+</script>
+</html>
