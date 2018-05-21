@@ -122,6 +122,9 @@ function objShallowCopy5() {
         age: 18,
         hobbies: {
             sports: 'Football'
+        },
+        fn: function () {
+
         }
     };
     var obj2 = $.extend(true, {}, obj1);
