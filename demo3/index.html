@@ -46,6 +46,181 @@ function arrTest1() {
 			</pre>
 			<button class="btn btn-default" onclick="arrTest1()">运行</button>
 		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example3：</h4>
+			<pre>
+				<code>
+function arrayShallowCopy1() {
+    var arr1 = [1, 2, 3];
+    var arr2 = arr1.concat();
+    arr1.push(4);
+    console.log(arr1);
+    console.log(arr2);
+}             </code>
+			</pre>
+			<button class="btn btn-default" onclick="arrayShallowCopy1()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example4：</h4>
+			<pre>
+				<code>
+function arrayShallowCopy2() {
+    var arr1 = [1, 2, 3];
+    var arr2 = arr1.slice(0);
+    arr1.push(4);
+    console.log(arr1);
+    console.log(arr2);
+}             </code>
+			</pre>
+			<button class="btn btn-default" onclick="arrayShallowCopy2()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example5：</h4>
+			<pre>
+				<code>
+function arrayShallowCopy3() {
+    var arr1 = [1, 2, {name: 'Jack', age: 18}];
+    var arr2 = arr1.concat();
+    arr1.push(4);
+    arr1[2].age = 20;
+    console.log(arr1);
+    console.log(arr2);
+}            </code>
+			</pre>
+			<button class="btn btn-default" onclick="arrayShallowCopy3()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example6：</h4>
+			<pre>
+				<code>
+function objShallowCopy1() {
+    var obj1 = {
+        name: 'Jack',
+        age: 18
+    };
+    var obj2 = copyObj(obj1);
+    obj1.age = 20;
+    console.log(obj1);
+    console.log(obj2);
+
+    function copyObj(obj) {
+        var res = {};
+        for (var key in obj) {
+            res[key] = obj[key]
+        }
+        return res;
+    }
+}          </code>
+			</pre>
+			<button class="btn btn-default" onclick="objShallowCopy1()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example7：</h4>
+			<pre>
+				<code>
+function objShallowCopy2() {
+    var obj1 = {
+        name: 'Jack',
+        age: 18,
+        hobbies: {
+            sports: 'Football',
+            stars: 'Jay'
+        }
+    };
+    var obj2 = copyObj(obj1);
+    obj1.age = 20;
+    obj1.hobbies.sports = 'Basketball';
+    console.log(obj1);
+    console.log(obj2);
+
+    function copyObj(obj) {
+        var res = {};
+        for (var key in obj) {
+            res[key] = obj[key]
+        }
+        return res;
+    }
+}         </code>
+			</pre>
+			<button class="btn btn-default" onclick="objShallowCopy2()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example8：</h4>
+			<pre>
+				<code>
+function objShallowCopy3() {
+    var obj1 = {
+        name: 'Jack',
+        age: 18,
+        hobbies: {
+            sports: 'Football'
+        }
+    };
+    var obj2 = JSON.parse(JSON.stringify(obj1));
+    obj1.age = 20;
+    obj1.hobbies.sports = 'Basketball';
+    console.log(obj1);
+    console.log(obj2);
+}        </code>
+			</pre>
+			<button class="btn btn-default" onclick="objShallowCopy3()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example9：</h4>
+			<pre>
+				<code>
+function objShallowCopy4() {
+    var obj1 = {
+        name: 'Jack',
+        age: 18,
+        hobbies: {
+            sports: 'Football'
+        },
+        fn: function () {
+
+        }
+    };
+    var obj2 = JSON.parse(JSON.stringify(obj1));
+    obj1.age = 20;
+    obj1.hobbies.sports = 'Basketball';
+    console.log(obj1);
+    console.log(obj2);
+}               </code>
+			</pre>
+			<button class="btn btn-default" onclick="objShallowCopy4()">运行</button>
+		</div>
+
+		<div class="col-md-10 col-md-offset-1">
+			<h4>Example10：</h4>
+			<pre>
+				<code>
+function objShallowCopy5() {
+    var obj1 = {
+        name: 'Jack',
+        age: 18,
+        hobbies: {
+            sports: 'Football'
+        },
+        fn: function () {
+
+        }
+    };
+    var obj2 = $.extend(true, {}, obj1);
+    obj1.age = 20;
+    obj1.hobbies.sports = 'Basketball';
+    console.log(obj1);
+    console.log(obj2);
+}               </code>
+			</pre>
+			<button class="btn btn-default" onclick="objShallowCopy5()">运行</button>
+		</div>
 	</div>
 
 </div>
