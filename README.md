@@ -1,4 +1,4 @@
-# JsSimpleDemo
+# js-simple-demo
 some javascript simple demo
 
 ## demo1
