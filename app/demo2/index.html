@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用css3动画实现一个红绿灯交替闪烁效果</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<!--广告区域 -->
+<div id="advertiseArea">
+	<a class="title" href="http://www.maplejoyous.cn">使用css3动画实现一个红绿灯交替闪烁效果</a>
+	<a class="link" href="http://www.maplejoyous.cn">http://www.maplejoyous.cn</a>
+</div>
+
+<!--------------------------华丽的分割线-------------------------------->
+
+<div id="container">
+	<div class="traffic-light-block">
+		<div class="traffic-light">
+			<span class="light-block"></span>
+		</div>
+	</div>
+
+	<button class="btn btn-default" onclick="turnOnLight();">开启红绿灯</button>
+	<button class="btn btn-default" onclick="showGreenLight();">亮绿灯</button>
+	<button class="btn btn-default" onclick="showYellowLight();">亮黄灯</button>
+	<button class="btn btn-default" onclick="showRedLight();">亮红灯</button>
+</div>
+
+</body>
+
+<script src="../../js/jquery.min.js"></script>
+<script>
+    function turnOnLight() {
+        $('.traffic-light span').addClass('light-animate light-animate-name');
+    }
+
+    function turnOffLight() {
+        $('.traffic-light span').removeClass();
+    }
+
+
+    function showGreenLight() {
+        turnOffLight();
+        $('.traffic-light span').addClass('green');
+    }
+
+    function showYellowLight() {
+        turnOffLight();
+        $('.traffic-light span').addClass('yellow');
+    }
+
+    function showRedLight() {
+        turnOffLight();
+        $('.traffic-light span').addClass('red');
+    }
+</script>
+</html>
